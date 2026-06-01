@@ -1,3 +1,27 @@
+// ========== PIN-КОД ==========
+
+// Запусти эту функцию ОДИН РАЗ вручную, чтобы установить PIN
+function setupPin(){
+  const pin = '1899'; // 👈 ЗАМЕНИ НА СВОЙ PIN (4 цифры)
+  PropertiesService.getScriptProperties().setProperty('SALARY_PIN', pin);
+  Logger.log('PIN установлен: ' + pin);
+}
+
+// Проверка PIN — вызывается из браузера
+function checkPin(pin){
+  const savedPin = PropertiesService.getScriptProperties().getProperty('SALARY_PIN');
+  if(!savedPin){
+    throw new Error('PIN не настроен. Запустите setupPin() в редакторе.');
+  }
+  return String(pin) === String(savedPin);
+}
+
+// Защитник — кидает ошибку, если PIN неверный
+function _requirePin(pin){
+  if(!checkPin(pin)){
+    throw new Error('Неверный PIN');
+  }
+}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
