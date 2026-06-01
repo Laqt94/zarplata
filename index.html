@@ -4,7 +4,6 @@
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1a7a3e">
 <title>Моя зарплата</title>
 
 <!-- ===== ИКОНКИ ===== -->
@@ -26,29 +25,42 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Зарплата">
-<meta name="theme-color" content="#11998e">
+<meta name="theme-color" content="#0a6b4a">
 
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   html, body {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg,#11998e 0%,#38ef7d 100%);
+    background: linear-gradient(135deg,#0a6b4a 0%,#1e9e5e 100%);
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
   }
+
+  body {
+    /* Учёт чёлки/Dynamic Island и нижней полосы iPhone */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    background: #0a6b4a; /* фон под safe-area (чтобы не было белой полосы) */
+  }
+
   .loader {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg,#11998e 0%,#38ef7d 100%);
+    background: linear-gradient(135deg,#0a6b4a 0%,#1e9e5e 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 9999;
     transition: opacity 0.3s ease;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
   .loader img {
     width: 120px;
@@ -69,12 +81,13 @@
     0%, 100% { transform: scale(1); opacity: 1; }
     50% { transform: scale(0.95); opacity: 0.8; }
   }
+
   iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
-    background: #11998e;
+    background: #0a6b4a;
   }
 </style>
 </head>
