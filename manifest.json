@@ -1,0 +1,24 @@
+{
+  "name": "Моя зарплата",
+  "short_name": "Зарплата",
+  "description": "Дашборд по зарплате PickupTuning",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#11998e",
+  "theme_color": "#11998e",
+  "icons": [
+    {
+      "src": "iconzp.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "iconzp.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
